@@ -1,7 +1,7 @@
-# XMoon
+# PM Lion Test
 ![Preview](https://i.imgur.com/PTebvce.png)
 
-Fork of the theme "MacOSX Theme" by GOLF-AT for Pale Moon.
+Fork of the theme "XMoon" by Lootyhoof, which is in itself a fork of "Mac OS X Theme" by GOLF-AT.
 
 ## Building
 Simply download the contents of the "src" folder  and pack the contents into a .zip file. Then, rename the file to .xpi and drag into the browser.

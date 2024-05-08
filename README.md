@@ -1,5 +1,5 @@
 # IMPORTANT INFORMATION
-This branch is the originl source as of May 8th, 2024 at 11:09AM. The modified Lion UI is found in the lion-ui branch. Please push changes there.
+This branch is the original source for XMoon as of May 8th, 2024 at 11:09AM. The modified Lion UI is found in the lion-ui branch. Please push changes there.
 
 
 # XMoon

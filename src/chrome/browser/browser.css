@@ -14,10 +14,10 @@
   --sidebar-background-color: #E2E7ED;
   --sidebar-inactive-color: var(--statusbar-background-color);
   --statusbar-background-color: #E8E8E8;
-  --toolbar-background-color: #b2b2b2;
-  --toolbar-inactive-color: #dfdfdf;
-  --toolbar-highlight-color: #e7e7e7;
-  --toolbar-highlight-inactive-color: #dfdfdf;
+  --toolbar-background-color: #B2B2B2;
+  --toolbar-inactive-color: #DFDFDF;
+  --toolbar-highlight-color: #E7E7E7;
+  --toolbar-highlight-inactive-color: #FDFDFD;
   --toolbarbutton-background: #ADADAD;
   --toolbarbutton-hover-background: #9E9E9E;
   --toolbarbutton-active-background: #B5B5B5;
@@ -51,7 +51,11 @@
     background: none !important;
     border-color: transparent !important;
   }
-
+  
+  #main-window {
+  -moz-appearance: none;
+  background-color: #eeeeee;
+}
 
 #main-window[chromehidden~="toolbar"][chromehidden~="location"][chromehidden~="directories"] {
   border-top: 1px solid rgba(0,0,0,0.65);
@@ -62,6 +66,14 @@
   padding: 3px 2px;
 }
 
+#nav-bar {
+  -moz-appearance: none;
+  background-image: linear-gradient(to bottom, var(--toolbar-highlight-color), var(--toolbar-background-color));
+}
+
+#nav-bar:-moz-window-inactive {
+  background-image: linear-gradient(to bottom, var(--toolbar-highlight-inactive-color), var(--toolbar-inactive-color));
+}
 
 #nav-bar[mode="full"] {
   min-height: 48px;
@@ -79,10 +91,10 @@
 
 #PersonalToolbar {
   -moz-appearance: none;
-  margin-top: 0px; /* overlay the bottom border of the toolbar above us */
+  margin-top: -1px; /* overlay the bottom border of the toolbar above us */
   padding-top: 0 !important;
   background-color: var(--toolbar-background-color);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.57) ;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.57);
 }
 
 #addon-bar:-moz-window-inactive {
@@ -94,7 +106,7 @@
 #navigator-toolbox[tabsontop="true"]:not([customizing]) > #nav-bar[collapsed="true"] + toolbar,
 #navigator-toolbox[tabsontop="true"]:not([customizing]) > #nav-bar[collapsed="true"] + #customToolbars + #PersonalToolbar {
   margin-top: 0; /* don't overlay the bottom border of the tabs toolbar */
-  padding-top: 3px !important;
+  padding-top: 4px !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.57);
   background-color: var(--toolbar-background-color);
   background-image: linear-gradient(rgba(255,255,255,.43), rgba(255,255,255,0)) !important; /* override lwtheme style */
@@ -1897,11 +1909,12 @@ toolbarbutton.chevron > .toolbarbutton-menu-dropmarker {
 }
 
 #TabsToolbar[tabsontop="true"]:not(:-moz-lwtheme) {
-  padding-bottom: 1px;
+  padding-bottom: 2px;
+  background-image: url(chrome://browser/skin/tabbrowser/tabbar-top-bg-active.png);
 }
 
 #TabsToolbar[tabsontop="true"]:not(:-moz-lwtheme):-moz-window-inactive {
-  padding-bottom: 1px;
+  background-image: url(chrome://browser/skin/tabbrowser/tabbar-top-bg-inactive.png);
 }
 
 #TabsToolbar[tabsontop="false"] {
@@ -3082,15 +3095,4 @@ panel[type="arrow"][popupid="click-to-play-plugins"] > .panel-arrowcontainer > .
 #ub-feed-button[open="true"],
 #ub-feed-button:hover:active {
   -moz-image-region: rect(0px 48px 16px 32px);
-}
-
-#nav-bar[tabsontop=true],
-#nav-bar[tabsontop=true][collapsed=true]:not([customizing]) + toolbar,
-#nav-bar[tabsontop=true][collapsed=true]:not([customizing]) + #customToolbars + #PersonalToolbar {
-  -moz-appearance: none;
-  margin-top: 1px; /* don't overlay the bottom border of the tabs toolbar */
-  padding-top: 4px !important;
-  background-color: -moz-mac-chrome-active;
-  background-image: -moz-linear-gradient(rgba(255,255,255,.43), rgba(255,255,255,0)) !important; /* override lwtheme style */
-  background-origin: border-box !important;
 }

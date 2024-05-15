@@ -28,6 +28,22 @@
   margin-left: 10px;
 }
 
+
+#TabsToolbar[tabsontop="true"]:not(:-moz-lwtheme) {
+  padding-bottom: 3px;
+  -moz-appearance: toolbar;
+}
+
+#TabsToolbar[tabsontop="true"]:not(:-moz-lwtheme):-moz-window-inactive {
+  -moz-appearance: toolbar;
+}
+
+#nav-bar {
+}
+
+#nav-bar:-moz-window-inactive {
+} 
+
 /* titlebar command buttons */
 
 #titlebar-min {
@@ -66,14 +82,16 @@
   margin-top: 3px;
 }
 
-#main-window:-moz-lwtheme > #titlebar {
-  -moz-appearance: none !important;
+/* Blend the topmost toolbar with the titlebar */
+#main-window[tabsontop=false] #nav-bar:not(:-moz-lwtheme),
+#main-window[tabsontop=false] #PersonalToolbar[collapsed=true] ~ #TabsToolbar:not(:-moz-lwtheme),
+#main-window[tabsontop=true] #TabsToolbar:not(:-moz-lwtheme) {
+  -moz-appearance: toolbar !important;
 }
+#TabsToolbar[tabsontop="true"]:not(:-moz-lwtheme) {
+  -moz-appearance: toolbar !important;
+  padding-bottom: 2px !important;
 
-#main-window {
-  -moz-appearance: none;
-  background-color: #eeeeee;
-}
 
 /* Private browsing indicator */
 

@@ -76,12 +76,13 @@
   background-color: var(--toolbar-highlight-inactive-color);
 }
 
+
 #PersonalToolbar {
   -moz-appearance: none;
-  margin-top: -1px; /* overlay the bottom border of the toolbar above us */
+  margin-top: 0px; /* overlay the bottom border of the toolbar above us */
   padding-top: 0 !important;
   background-color: var(--toolbar-background-color);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.57);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.57) ;
 }
 
 #addon-bar:-moz-window-inactive {
@@ -1769,12 +1770,17 @@ toolbarbutton.chevron > .toolbarbutton-menu-dropmarker {
   background-color: var(--toolbar-inactive-color);
 }
 
+.tab-background-start[pinned][titlechanged]:not([selected="true"]),
+.tab-background-end[pinned][titlechanged]:not([selected="true"]) {
+  background-image: linear-gradient(rgba(148,205,253,.2), rgba(148,205,253,.2)) !important;
+}
 
 #tabbrowser-tabs[tabsontop="false"] > .tabbrowser-tab > .tab-stack > .tab-background > .tab-background-middle[pinned][titlechanged]:not([selected="true"]) {
   background-image: -moz-radial-gradient(center 99%, circle cover, rgba(254,254,255,1) 3%, rgba(210,235,255,.9) 12%, rgba(148,205,253,.6) 30%, rgba(148,205,253,.2) 70%);
 }
 
-
+#tabbrowser-tabs[tabsontop="true"] > .tabbrowser-tab > .tab-stack > .tab-background > .tab-background-middle[pinned][titlechanged]:not([selected="true"]) {
+  background-image: -moz-radial-gradient(center 2px, circle cover, rgba(254,254,255,1) 3%, rgba(210,235,255,.9) 12%, rgba(148,205,253,.6) 30%, rgba(148,205,253,.2) 70%);
 }
 
 .tabbrowser-tab > .tab-stack > .tab-background > .tab-background-start:-moz-lwtheme-brighttext:not([selected="true"]),
@@ -1891,11 +1897,11 @@ toolbarbutton.chevron > .toolbarbutton-menu-dropmarker {
 }
 
 #TabsToolbar[tabsontop="true"]:not(:-moz-lwtheme) {
-  padding-bottom: 2px;
+  padding-bottom: 1px;
 }
 
 #TabsToolbar[tabsontop="true"]:not(:-moz-lwtheme):-moz-window-inactive {
-
+  padding-bottom: 1px;
 }
 
 #TabsToolbar[tabsontop="false"] {
@@ -3080,11 +3086,11 @@ panel[type="arrow"][popupid="click-to-play-plugins"] > .panel-arrowcontainer > .
 
 #nav-bar[tabsontop=true],
 #nav-bar[tabsontop=true][collapsed=true]:not([customizing]) + toolbar,
-#nav-bar[tabsontop=true][collapsed=true]:not([customizing]) + #customToolbars + #PersonalToolbar { 
--moz-appearance: none;
+#nav-bar[tabsontop=true][collapsed=true]:not([customizing]) + #customToolbars + #PersonalToolbar {
+  -moz-appearance: none;
+  margin-top: 1px; /* don't overlay the bottom border of the tabs toolbar */
   padding-top: 4px !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.57) !important:
   background-color: -moz-mac-chrome-active;
   background-image: -moz-linear-gradient(rgba(255,255,255,.43), rgba(255,255,255,0)) !important; /* override lwtheme style */
   background-origin: border-box !important;
-  
+}

@@ -51,8 +51,9 @@
     background: none !important;
     border-color: transparent !important;
   }
-  
-  #main-window {
+}
+
+#main-window {
   -moz-appearance: none;
   background-color: #eeeeee;
 }
@@ -106,7 +107,7 @@
 #navigator-toolbox[tabsontop="true"]:not([customizing]) > #nav-bar[collapsed="true"] + toolbar,
 #navigator-toolbox[tabsontop="true"]:not([customizing]) > #nav-bar[collapsed="true"] + #customToolbars + #PersonalToolbar {
   margin-top: 0; /* don't overlay the bottom border of the tabs toolbar */
-  padding-top: 4px !important;
+  padding-top: 3px !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.57);
   background-color: var(--toolbar-background-color);
   background-image: linear-gradient(rgba(255,255,255,.43), rgba(255,255,255,0)) !important; /* override lwtheme style */
@@ -892,7 +893,6 @@ toolbar[mode="icons"] #zoom-in-button {
   font: icon;
   width: 7em;
   min-width: 7em;
-  height 16px
   -moz-appearance: none;
   border: 0;
   box-shadow: 0 1px rgba(255, 255, 255, 0.2);
@@ -1650,15 +1650,15 @@ toolbarbutton.chevron > .toolbarbutton-menu-dropmarker {
 .tab-icon-image {
   width: 16px;
   height: 16px;
-  display:none
+  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
 }
 
 .tab-throbber {
-  display:none
+  list-style-image: url("chrome://browser/skin/tabbrowser/connecting.png");
 }
 
 .tab-throbber[progress] {
-  display:none
+  list-style-image: url("chrome://browser/skin/tabbrowser/loading.png");
 }
 
 .tabbrowser-tab:not(:hover) > .tab-stack > .tab-content > .tab-icon-image:not([selected="true"]) {
@@ -1717,10 +1717,7 @@ toolbarbutton.chevron > .toolbarbutton-menu-dropmarker {
 .tab-close-button,
 .tab-icon-sound,
 .tab-icon-overlay {
-  -moz-box-ordial-group: 2;
   pointer-events: auto;
-  
-  
 }
 
 .tabbrowser-tabs[closebuttons="hidden"] > * > * > * > .tab-close-button:not([pinned]) {
@@ -2207,7 +2204,6 @@ toolbarbutton.chevron > .toolbarbutton-menu-dropmarker {
 #TabsToolbar > toolbarpaletteitem > #new-tab-button {
   list-style-image: url(chrome://browser/skin/tabbrowser/newtab.png);
   -moz-image-region: rect(0, 18px, 20px, 0);
-  
 }
 
 .tabs-newtab-button:-moz-lwtheme-brighttext,
